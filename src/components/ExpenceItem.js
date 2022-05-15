@@ -1,18 +1,20 @@
+// import { useCallback } from "react/cjs/react.production.min";
+import ExpenseDate from "./ExpenseDate";
 import "./ExpenceItem.css";
 
-function ExpenceItem (){
-  const expenseDate =  new Date(2021, 2, 30);
-  const expenseTitle = "Jacket";
-  const expenseAmount = 300;
-
-  return ( 
-      <div className="expense-item">
-        <div className="">{expenseDate.toISOString()}</div>
-        <div className="expense-item__description">
-          <h2>{expenseTitle}</h2>
-          <div className="expense-item__price">£{expenseAmount}</div>
-        </div>
+function ExpenceItem(props) {
+ 
+  
+  return (
+    <div className="expense-item">
+      <div className="">
+        <ExpenseDate date={props.date}></ExpenseDate>
       </div>
+      <div className="expense-item__description">
+        <h2>{props.title}</h2>
+        <div className="expense-item__price">£{props.amount}</div>
+      </div>
+    </div>
   );
 }
 
