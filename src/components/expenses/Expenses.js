@@ -3,7 +3,7 @@ import ExpenceItem from "./ExpenceItem";
 import "./Expenses.css"
 
 function Expenses(props){
-  console.log(props.allExpenses);
+  // console.log(props.allExpenses);
   return(
     <Card className="expenses">
       <ExpenceItem 
