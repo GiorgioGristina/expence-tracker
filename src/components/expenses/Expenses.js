@@ -6,14 +6,14 @@ import ExpensesFilter from "./ExpensesFilter";
 
 function Expenses(props){
   
-  const [year, setYear] = useState('')
+  const [year, setYear] = useState('all')
 
   function filterChangeHandler(yearselected){
     setYear(yearselected)
   }
-
+  console.log(year);
   const filteredExpenses = props.allExpenses.filter( expense => {
-    if (year === "") {
+    if (year === "all") {
       return expense
     }
     return expense.date.getFullYear().toString() === year
