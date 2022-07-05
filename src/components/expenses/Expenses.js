@@ -12,31 +12,21 @@ function Expenses(props){
     setYear(yearselected)
   }
 
-  console.log(year);
+  
+  // console.log(year);
   return(
   
       <Card className="expenses">
-      <ExpensesFilter selected={year} onChangeFilter={filterChangeHandler} />
-        <ExpenceItem 
-            title={props.allExpenses[0].title}
-            amount={props.allExpenses[0].amount}
-            date={props.allExpenses[0].date}
-        ></ExpenceItem>  
-        <ExpenceItem
-            title={props.allExpenses[1].title}
-            amount={props.allExpenses[1].amount}
-            date={props.allExpenses[1].date}
-        ></ExpenceItem>     
-        <ExpenceItem
-            title={props.allExpenses[2].title}
-            amount={props.allExpenses[2].amount}
-            date={props.allExpenses[2].date}
-        ></ExpenceItem>     
-        <ExpenceItem
-            title={props.allExpenses[3].title}
-            amount={props.allExpenses[3].amount}
-            date={props.allExpenses[3].date}
-        ></ExpenceItem> 
+        <ExpensesFilter selected={year} onChangeFilter={filterChangeHandler} />
+        {props.allExpenses.map(expense => {
+          console.log(expense);
+          return <ExpenceItem 
+                    key={expense.id}
+                    title={expense.title}
+                    amount={expense.amount}
+                    date={expense.date}
+                    />
+        })}
       </Card>
     
   );
