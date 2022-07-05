@@ -50,8 +50,11 @@ function ExpenseForm(props){
       enteredAmount: "",
       enteredDate: ""
     })
-    // console.log(expenseData);
+    
+  
   }
+
+ 
   return(
     <form onSubmit={submitHandler}>
       <div className="new-expense__controls">
@@ -69,6 +72,7 @@ function ExpenseForm(props){
         </div>
       </div>
       <div className="new-expense__action">
+      <button type="button" onClick={props.closeForm}>Cancel</button>
         <button type="submit">Add expense</button>
       </div>
 
