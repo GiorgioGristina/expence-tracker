@@ -4,8 +4,7 @@ import ExpenseDate from "./ExpenseDate";
 import Card from "../UI/Card";
 import "./ExpenceItem.css";
 
-function ExpenceItem(props) {  
-  
+function ExpenceItem(props) {
   return (
     <li>
       <Card className="expense-item">
@@ -20,7 +19,5 @@ function ExpenceItem(props) {
     </li>
   );
 }
-
-
 
 export default ExpenceItem;
